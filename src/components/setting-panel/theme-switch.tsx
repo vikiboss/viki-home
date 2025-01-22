@@ -50,17 +50,17 @@ export const ThemeSwitch: Component = () => {
 
   return (
     <div
-      class='relative flex h-7 sm:h-10 w-[140px] sm:w-[240px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'
+      class='relative flex h-7 sm:h-10 w-[140px] sm:w-[280px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'
       role='radiogroup'
       aria-label={i18n.t('themeSelection')}
     >
       <div
-        class={`absolute h-5 sm:h-7 w-[40px] sm:w-[72px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
+        class={`absolute h-5 sm:h-7 w-[40px] sm:w-[88px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
           theme() === 'light'
             ? 'translate-x-0'
             : theme() === 'system'
-            ? 'translate-x-[46px] sm:translate-x-[78px]'
-            : 'translate-x-[92px] sm:translate-x-[158px]'
+            ? 'translate-x-[46px] sm:translate-x-[91px]'
+            : 'translate-x-[92px] sm:translate-x-[182px]'
         }`}
       />
       <button

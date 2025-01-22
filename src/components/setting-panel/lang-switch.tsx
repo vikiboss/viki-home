@@ -9,10 +9,10 @@ export const LangSwitch: Component = () => {
   }
 
   return (
-    <div class='relative flex h-7 sm:h-10 w-[80px] sm:w-[160px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'>
+    <div class='relative flex h-7 sm:h-10 w-[80px] sm:w-[120px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'>
       <div
-        class={`absolute h-5 sm:h-7 w-[34px] sm:w-[72px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
-          lang() === 'zh' ? 'translate-x-0' : 'translate-x-[38px] sm:translate-x-[78px]'
+        class={`absolute h-5 sm:h-7 w-[34px] sm:w-[48px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
+          lang() === 'zh' ? 'translate-x-0' : 'translate-x-[38px] sm:translate-x-[60px]'
         }`}
       />
       <button
@@ -22,7 +22,7 @@ export const LangSwitch: Component = () => {
         aria-label={t('chinese')}
       >
         <div class='i-mdi:ideogram-chinese-japanese-korean-variant w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
-        <span class='hidden sm:inline text-sm font-medium'>中文</span>
+        {/* <span class='hidden sm:inline text-sm font-medium'>中文</span> */}
       </button>
       <button
         onClick={() => updateLang('en')}
@@ -30,8 +30,8 @@ export const LangSwitch: Component = () => {
         data-active={lang() === 'en'}
         aria-label={t('english')}
       >
-        <div class='i-ph-sun-bold w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
-        <span class='hidden sm:inline text-sm font-medium'>En</span>
+        <div class='i-ri:english-input w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
+        {/* <span class='hidden sm:inline text-sm font-medium'>En</span> */}
       </button>
     </div>
   )
