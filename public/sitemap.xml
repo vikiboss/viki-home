@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://viki-home.vecel.app/</loc>
+    <loc>https://viki.moe</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://viki-home.vecel.app/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://viki-home.vecel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://viki.moe" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viki.moe" />
   </url>
   <url>
     <loc>https://xlog.viki.moe</loc>
