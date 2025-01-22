@@ -6,7 +6,7 @@ import { I18nContext } from '../i18n'
 import { socialLinks, personalInfo } from '../config'
 
 export const Profile: Component = () => {
-  const i18n = useContext(I18nContext)!
+  const { t } = useContext(I18nContext)!
 
   return (
     <div
@@ -14,8 +14,8 @@ export const Profile: Component = () => {
       role='main'
     >
       <main
-        class='w-full max-w-xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 border-2 border-transparent hover:border-gray-200/20'
-        aria-label={i18n.t('personalProfile')}
+        class='w-full max-w-xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:z-10'
+        aria-label={t('personalProfile')}
       >
         {/* 个人信息区域 */}
         <div class='flex flex-col md:flex-row md:justify-center md:items-center md:gap-8 mb-8'>
@@ -31,10 +31,13 @@ export const Profile: Component = () => {
           </div>
 
           {/* 昵称与座右铭 */}
-          <div class='text-center md:text-left space-y-4'>
-            <h1 class='text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider'>
+          <div class='text-center md:text-left'>
+            <h1 class='text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider'>
               {personalInfo.name}
             </h1>
+            <p class='my-2 text-gray-600 dark:text-gray-400 font-medium tracking-wide border-b-3 border-dashed border-b-amber/80'>
+              {personalInfo.title}
+            </p>
             <p class='text-gray-600 dark:text-gray-400 italic font-light'>"{personalInfo.motto}"</p>
           </div>
         </div>
@@ -47,7 +50,7 @@ export const Profile: Component = () => {
           >
             <div class='w-6 h-6 i-ri:blogger-line text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
-              {i18n.t('blog')}
+              {t('blog')}
             </span>
           </A>
           <A
@@ -56,7 +59,7 @@ export const Profile: Component = () => {
           >
             <div class='w-6 h-6 i-ri:sparkling-2-line text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
-              {i18n.t('projects')}
+              {t('projects')}
             </span>
           </A>
         </div>
@@ -71,7 +74,7 @@ export const Profile: Component = () => {
                 rel='noopener noreferrer'
                 class='flex items-center group no-underline'
               >
-                <Tooltip text={`${i18n.t(link.name)}: ${link.account}`}>
+                <Tooltip text={`${t(link.name)}: ${link.account}`}>
                   <div
                     class={`w-6 h-6 text-gray-600/80 dark:text-gray-400/80 transform transition-all duration-300 group-hover:scale-90 group-hover:-translate-y--1.2 ${link.icon} ${link.hoverColor}`}
                   />

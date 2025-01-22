@@ -9,6 +9,7 @@ export interface SocialLink {
 
 export const personalInfo = {
   name: 'Viki',
+  title: 'Front End <Developer />',
   motto: 'Less is more.',
   avatarUrl: '/favicon.ico',
 }
@@ -77,6 +78,20 @@ export const socialLinks: {
   //   hoverColor: 'group-hover:text-[#EB1923]',
   // },
   {
+    name: 'bili',
+    account: '381636335',
+    url: 'https://space.bilibili.com/381636335',
+    icon: 'i-ri:bilibili-fill',
+    hoverColor: 'group-hover:text-[#FB7299]',
+  },
+  {
+    name: 'douban',
+    account: 'VikiQAQ',
+    url: 'https://www.douban.com/people/VikiQAQ',
+    icon: 'i-ri:douban-fill',
+    hoverColor: 'group-hover:text-[#007722]',
+  },
+  {
     name: 'qq',
     url: 'https://qm.qq.com/q/QJvb8LZHmU',
     account: 'VikiQAQ',
@@ -89,19 +104,5 @@ export const socialLinks: {
     account: 'VikiQAQ',
     icon: 'i-ri:wechat-fill',
     hoverColor: 'group-hover:text-[#07C160]',
-  },
-  {
-    name: 'douban',
-    account: 'VikiQAQ',
-    url: 'https://www.douban.com/people/VikiQAQ',
-    icon: 'i-ri:douban-fill',
-    hoverColor: 'group-hover:text-[#007722]',
-  },
-  {
-    name: 'bili',
-    account: '381636335',
-    url: 'https://space.bilibili.com/381636335',
-    icon: 'i-ri:bilibili-fill',
-    hoverColor: 'group-hover:text-[#FB7299]',
   },
 ]
