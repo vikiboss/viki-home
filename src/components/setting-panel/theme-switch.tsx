@@ -41,8 +41,19 @@ export const ThemeSwitch: Component = () => {
     updateTheme(theme())
   })
 
+  const handleKeyDown = (e: KeyboardEvent, theme: Theme) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      updateTheme(theme)
+    }
+  }
+
   return (
-    <div class='relative flex h-7 sm:h-10 w-[140px] sm:w-[240px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'>
+    <div
+      class='relative flex h-7 sm:h-10 w-[140px] sm:w-[240px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'
+      role='radiogroup'
+      aria-label={i18n.t('themeSelection')}
+    >
       <div
         class={`absolute h-5 sm:h-7 w-[40px] sm:w-[72px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
           theme() === 'light'
@@ -54,6 +65,10 @@ export const ThemeSwitch: Component = () => {
       />
       <button
         onClick={() => updateTheme('light')}
+        onKeyDown={e => handleKeyDown(e, 'light')}
+        role='radio'
+        aria-checked={theme() === 'light'}
+        tabIndex={0}
         class='relative z-10 flex-1 flex items-center justify-center h-5 sm:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
         data-active={theme() === 'light'}
         aria-label={i18n.t('lightMode')}

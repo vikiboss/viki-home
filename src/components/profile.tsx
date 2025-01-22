@@ -9,12 +9,22 @@ export const Profile: Component = () => {
   const i18n = useContext(I18nContext)!
 
   return (
-    <div class='min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4 transition-colors duration-300'>
-      <main class='w-full max-w-2xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 border-2 border-transparent hover:border-gray-200/20'>
+    <div
+      class='min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4 transition-colors duration-300'
+      role='main'
+    >
+      <main
+        class='w-full max-w-2xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 border-2 border-transparent hover:border-gray-200/20'
+        aria-label={i18n.t('personalProfile')}
+      >
         {/* 个人信息区域 */}
         <div class='flex flex-col md:flex-row md:justify-center md:items-center md:gap-8 mb-8'>
           {/* 头像区域 */}
-          <div class='flex justify-center mb-6 md:mb-0 md:flex-shrink-0'>
+          <div
+            class='flex justify-center mb-6 md:mb-0 md:flex-shrink-0'
+            role='img'
+            aria-label={`${personalInfo.name}'s avatar`}
+          >
             <div class='w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg transform transition-transform hover:rotate-6'>
               <img src={personalInfo.avatarUrl} alt='个人头像' class='w-full h-full object-cover' />
             </div>

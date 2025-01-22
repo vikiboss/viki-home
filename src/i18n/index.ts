@@ -15,6 +15,13 @@ export const translations = {
     chinese: '中文',
     english: '英文',
     language: '语言',
+    personalProfile: '个人简介',
+    themeSelection: '主题选择',
+    avatarAlt: '个人头像',
+    metaDescription: '个人网站 - 展示博客文章和项目作品',
+    metaKeywords: '个人网站,作品集,博客,项目展示',
+    errorOccurred: '发生错误',
+    refresh: '刷新页面',
   },
   en: {
     blog: 'Blog',
@@ -28,6 +35,13 @@ export const translations = {
     chinese: 'Chinese',
     english: 'English',
     language: 'Language',
+    personalProfile: 'Personal Profile',
+    themeSelection: 'Theme Selection',
+    avatarAlt: 'Personal Avatar',
+    metaDescription: 'Personal Website - Featuring Blog Posts and Projects',
+    metaKeywords: 'personal website,portfolio,blog,projects',
+    errorOccurred: 'An Error Occurred',
+    refresh: 'Refresh Page',
   },
 }
 
