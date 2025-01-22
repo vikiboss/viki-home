@@ -86,7 +86,7 @@ export const createI18n = (initialLang: Language = 'zh') => {
     // 添加错误处理
     try {
       return translations[lang()][key] || key
-    } catch (e) {
+    } catch {
       console.warn(`Translation missing for key: ${key}`)
       return key
     }

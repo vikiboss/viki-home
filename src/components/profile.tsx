@@ -43,7 +43,7 @@ export const Profile: Component = () => {
         <div class='mt-8 flex flex-col gap-4 max-w-md mx-auto'>
           <A
             href='https://xlog.viki.moe'
-            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
+            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
             <div class='w-6 h-6 i-ph-notebook text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
@@ -52,7 +52,7 @@ export const Profile: Component = () => {
           </A>
           <A
             href='https://github.com/vikiboss?tab=repositories&q=&type=public&language=&sort=stargazers'
-            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
+            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
             <div class='w-6 h-6 i-ph-code text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
