@@ -14,7 +14,7 @@ export const Profile: Component = () => {
       role='main'
     >
       <main
-        class='w-full max-w-2xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 border-2 border-transparent hover:border-gray-200/20'
+        class='w-full max-w-xl mx-auto backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-xl p-8 transition-all duration-300 border-2 border-transparent hover:border-gray-200/20'
         aria-label={i18n.t('personalProfile')}
       >
         {/* 个人信息区域 */}
@@ -25,14 +25,14 @@ export const Profile: Component = () => {
             role='img'
             aria-label={`${personalInfo.name}'s avatar`}
           >
-            <div class='w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg transform transition-transform hover:rotate-6'>
+            <div class='w-32 h-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-700 shadow-lg transform transition-all duration-600 hover:rotate-360 ease-in-out'>
               <img src={personalInfo.avatarUrl} alt='个人头像' class='w-full h-full object-cover' />
             </div>
           </div>
 
           {/* 昵称与座右铭 */}
           <div class='text-center md:text-left space-y-4'>
-            <h1 class='text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent'>
+            <h1 class='text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider'>
               {personalInfo.name}
             </h1>
             <p class='text-gray-600 dark:text-gray-400 italic font-light'>"{personalInfo.motto}"</p>
@@ -40,21 +40,21 @@ export const Profile: Component = () => {
         </div>
 
         {/* 链接区域 */}
-        <div class='mt-8 flex flex-col gap-4 max-w-md mx-auto'>
+        <div class='mt-8 flex justify-center gap-4 max-w-md mx-auto'>
           <A
             href='https://xlog.viki.moe'
-            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
+            class='group flex items-center gap-3 p-3 px-8 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
-            <div class='w-6 h-6 i-ph-notebook text-blue-500 dark:text-blue-400' />
+            <div class='w-6 h-6 i-ri:blogger-line text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
               {i18n.t('blog')}
             </span>
           </A>
           <A
             href='https://github.com/vikiboss?tab=repositories&q=&type=public&language=&sort=stargazers'
-            class='group flex items-center gap-3 p-3 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
+            class='group flex items-center gap-3 p-3 px-8 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
-            <div class='w-6 h-6 i-ph-code text-blue-500 dark:text-blue-400' />
+            <div class='w-6 h-6 i-ri:sparkling-2-line text-blue-500 dark:text-blue-400' />
             <span class='text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100'>
               {i18n.t('projects')}
             </span>
@@ -64,26 +64,18 @@ export const Profile: Component = () => {
         {/* 社交媒体图标 */}
         <div class='mt-8 flex justify-center flex-wrap gap-6'>
           {socialLinks.map(link => {
-            const isOnlyTip = link.tip && !link.url
-
-            const icon = (
-              <Tooltip text={isOnlyTip ? link.tip || '' : i18n.t(link.name)}>
-                <div
-                  class={`w-6 h-6 text-gray-600/80 dark:text-gray-400/80 transform transition-all duration-300 group-hover:scale-90 group-hover:-translate-y-1 ${link.icon} ${link.hoverColor}`}
-                />
-              </Tooltip>
-            )
-
-            if (isOnlyTip) return icon
-
             return (
               <a
-                href={link.url}
-                target='_blank'
+                href={link.url || '#'}
+                target={link.url ? '_blank' : ''}
                 rel='noopener noreferrer'
                 class='flex items-center group no-underline'
               >
-                {icon}
+                <Tooltip text={`${i18n.t(link.name)}: ${link.account}`}>
+                  <div
+                    class={`w-6 h-6 text-gray-600/80 dark:text-gray-400/80 transform transition-all duration-300 group-hover:scale-90 group-hover:-translate-y--1.2 ${link.icon} ${link.hoverColor}`}
+                  />
+                </Tooltip>
               </a>
             )
           })}

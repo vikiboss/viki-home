@@ -64,7 +64,7 @@ export const translations = {
     weibo: 'Weibo',
     email: 'Email',
     douban: 'Douban',
-    wechat: 'Wechat',
+    wechat: 'WeChat',
     github: 'GitHub',
     twitter: 'Twitter',
     facebook: 'Facebook',
