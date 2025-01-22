@@ -64,20 +64,30 @@ export const Profile: Component = () => {
 
         {/* 社交媒体图标 */}
         <div class='mt-8 flex justify-center flex-wrap gap-6'>
-          {socialLinks.map(link => (
-            <a
-              href={link.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              class='flex items-center group no-underline'
-            >
-              <Tooltip text={link.name}>
+          {socialLinks.map(link => {
+            const isOnlyTip = link.tip && !link.url
+
+            const icon = (
+              <Tooltip text={isOnlyTip ? link.tip || '' : i18n.t(link.name)}>
                 <div
                   class={`w-6 h-6 text-gray-600/80 dark:text-gray-400/80 transform transition-all duration-300 group-hover:scale-90 group-hover:-translate-y-1 ${link.icon} ${link.hoverColor}`}
                 />
               </Tooltip>
-            </a>
-          ))}
+            )
+
+            if (isOnlyTip) return icon
+
+            return (
+              <a
+                href={link.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='flex items-center group no-underline'
+              >
+                {icon}
+              </a>
+            )
+          })}
         </div>
       </main>
     </div>
