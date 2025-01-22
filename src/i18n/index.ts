@@ -43,7 +43,7 @@ export const translations = {
     projects: 'Projects',
     light: 'Light',
     dark: 'Dark',
-    system: 'Sys',
+    system: 'System',
     lightMode: 'Light Mode',
     darkMode: 'Dark Mode',
     followSystem: 'Follow System',

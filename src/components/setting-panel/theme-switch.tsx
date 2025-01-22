@@ -50,17 +50,17 @@ export const ThemeSwitch: Component = () => {
 
   return (
     <div
-      class='relative flex h-7 sm:h-10 w-[140px] sm:w-[280px] rounded-full p-1 sm:p-1.5 gap-1.5 sm:gap-2 items-center bg-gray-100/50 dark:bg-gray-800/50'
+      class='relative flex h-7 md:h-10 w-[140px] md:w-[280px] rounded-full p-1 md:p-1.5 gap-1.5 md:gap-2 items-center bg-gray-2/60 dark:bg-gray-8/50'
       role='radiogroup'
       aria-label={i18n.t('themeSelection')}
     >
       <div
-        class={`absolute h-5 sm:h-7 w-[40px] sm:w-[88px] rounded-full shadow-sm transition-transform duration-200 bg-gray-200/80 dark:bg-gray-700/80 ${
+        class={`absolute h-5 md:h-7 w-[40px] md:w-[88px] rounded-full shadow-sm transition-transform duration-200 bg-gray-3/60 dark:bg-gray-7/80 ${
           theme() === 'light'
             ? 'translate-x-0'
             : theme() === 'system'
-            ? 'translate-x-[46px] sm:translate-x-[91px]'
-            : 'translate-x-[92px] sm:translate-x-[182px]'
+            ? 'translate-x-[46px] md:translate-x-[91px]'
+            : 'translate-x-[92px] md:translate-x-[182px]'
         }`}
       />
       <button
@@ -69,30 +69,30 @@ export const ThemeSwitch: Component = () => {
         role='radio'
         aria-checked={theme() === 'light'}
         tabIndex={0}
-        class='relative z-10 flex-1 flex items-center justify-center h-5 sm:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
+        class='relative z-10 flex-1 flex items-center justify-center h-5 md:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
         data-active={theme() === 'light'}
         aria-label={i18n.t('lightMode')}
       >
-        <div class='i-ph-sun-bold w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
-        <span class='hidden sm:inline text-sm font-medium'>{i18n.t('light')}</span>
+        <div class='i-ph-sun-bold w-3 md:w-4 h-3 md:h-4 transition-transform' />
+        <span class='hidden md:inline text-sm font-medium'>{i18n.t('light')}</span>
       </button>
       <button
         onClick={() => updateTheme('system')}
-        class='relative z-10 flex-1 flex items-center justify-center h-5 sm:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
+        class='relative z-10 flex-1 flex items-center justify-center h-5 md:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
         data-active={theme() === 'system'}
         aria-label={i18n.t('followSystem')}
       >
-        <div class='i-ph-desktop-bold w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
-        <span class='hidden sm:inline text-sm font-medium'>{i18n.t('system')}</span>
+        <div class='i-ph-desktop-bold w-3 md:w-4 h-3 md:h-4 transition-transform' />
+        <span class='hidden md:inline text-sm font-medium'>{i18n.t('system')}</span>
       </button>
       <button
         onClick={() => updateTheme('dark')}
-        class='relative z-10 flex-1 flex items-center justify-center h-5 sm:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
+        class='relative z-10 flex-1 flex items-center justify-center h-5 md:h-7 rounded-full transition-all text-gray-400 dark:text-gray-500 data-[active=true]:text-gray-700 dark:data-[active=true]:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 gap-2'
         data-active={theme() === 'dark'}
         aria-label={i18n.t('darkMode')}
       >
-        <div class='i-ph-moon-bold w-3 sm:w-4 h-3 sm:h-4 transition-transform' />
-        <span class='hidden sm:inline text-sm font-medium'>{i18n.t('dark')}</span>
+        <div class='i-ph-moon-bold w-3 md:w-4 h-3 md:h-4 transition-transform' />
+        <span class='hidden md:inline text-sm font-medium'>{i18n.t('dark')}</span>
       </button>
     </div>
   )
