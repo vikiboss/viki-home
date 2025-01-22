@@ -73,9 +73,7 @@ export const translations = {
   },
 }
 
-// 2. 添加语言持久化
 export const createI18n = (initialLang: Language = 'zh') => {
-  // 优先使用本地存储的语言设置，其次使用浏览器语言，最后使用默认语言
   const savedLang = localStorage.getItem('language') as Language
   const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en'
   const [lang, setLang] = createSignal<Language>(savedLang || browserLang || initialLang)
@@ -83,7 +81,6 @@ export const createI18n = (initialLang: Language = 'zh') => {
   document.title = translations[lang()].htmlTitle
 
   const t = (key: keyof (typeof translations)['zh']) => {
-    // 添加错误处理
     try {
       return translations[lang()][key] || key
     } catch {
@@ -92,15 +89,13 @@ export const createI18n = (initialLang: Language = 'zh') => {
     }
   }
 
-  // 包装 setLang 函数，添加持久化功能
   const setLanguage = (newLang: Language) => {
     setLang(newLang)
     localStorage.setItem('language', newLang)
-    // 触发页面重新渲染
+    document.title = translations[lang()].htmlTitle
     document.documentElement.setAttribute('lang', newLang)
   }
 
-  // 初始化页面语言属性
   document.documentElement.setAttribute('lang', lang())
 
   return { lang, setLang: setLanguage, t }
