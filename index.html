@@ -2,10 +2,9 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 添加更多 meta 标签 -->
-    <meta name="description" content="Your Name - Personal Website" />
+    <meta name="description" content="Viki - Personal Website" />
     <meta name="keywords" content="personal website, portfolio, blog, projects" />
     <meta name="author" content="Your Name" />
     <meta name="robots" content="index, follow" />
@@ -17,26 +16,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://your-domain.com" />
     <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
-
-    <!-- Preload 关键资源 -->
     <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/avatar.jpg" as="image" />
-
-    <!-- Preconnect 到关键域名 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <title>Your Name</title>
+    <title>Viki - Personal Website</title>
     <script>
-      ;(function () {
-        const theme = localStorage.getItem('theme') || 'system'
-        if (
-          theme === 'dark' ||
-          (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          document.documentElement.classList.add('dark')
-        }
-      })()
+      const theme = localStorage.getItem('theme') || 'system'
+      const isDark = theme === 'dark'
+      const isSysMatchDark = !!window.matchMedia('(prefers-color-scheme: dark)').matches
+      const isSysDark = theme === 'system' && isSysMatchDark
+      if (isDark || isSysDark) document.documentElement.classList.add('dark')
     </script>
   </head>
   <body>

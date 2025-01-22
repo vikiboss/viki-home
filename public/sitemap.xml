@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- 首页 -->
   <url>
     <loc>https://your-domain.com/</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <!-- 多语言支持 -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/" />
+    <!-- 头像图片 -->
+    <image:image>
+      <image:loc>https://your-domain.com/avatar.jpg</image:loc>
+      <image:title>个人头像</image:title>
+    </image:image>
   </url>
+
+  <!-- 博客页面 -->
   <url>
     <loc>https://your-domain.com/blog</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/blog" />
   </url>
+
+  <!-- 项目页面 -->
   <url>
     <loc>https://your-domain.com/projects</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/projects" />
   </url>
 </urlset>

@@ -4,6 +4,7 @@ export type Language = 'zh' | 'en'
 
 export const translations = {
   zh: {
+    htmlTitle: 'Viki - 个人网站',
     blog: '博客',
     projects: '项目',
     light: '浅色',
@@ -24,6 +25,7 @@ export const translations = {
     refresh: '刷新页面',
   },
   en: {
+    htmlTitle: 'Viki - Personal Website',
     blog: 'Blog',
     projects: 'Projects',
     light: 'Light',
@@ -51,6 +53,8 @@ export const createI18n = (initialLang: Language = 'zh') => {
   const savedLang = localStorage.getItem('language') as Language
   const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en'
   const [lang, setLang] = createSignal<Language>(savedLang || browserLang || initialLang)
+
+  document.title = translations[lang()].htmlTitle
 
   const t = (key: keyof (typeof translations)['zh']) => {
     // 添加错误处理
