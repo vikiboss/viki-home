@@ -58,7 +58,7 @@ export const socialLinks: {
   },
   {
     name: 'qq',
-    tip: '1141284758',
+    tip: 'VikiQAQ',
     icon: 'i-ri:qq-fill',
     hoverColor: 'group-hover:text-[#12B7F5]',
   },

@@ -42,7 +42,7 @@ export const Profile: Component = () => {
         {/* 链接区域 */}
         <div class='mt-8 flex flex-col gap-4 max-w-md mx-auto'>
           <A
-            href='/blog'
+            href='https://xlog.viki.moe'
             class='group flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
             <div class='w-6 h-6 i-ph-notebook text-blue-500 dark:text-blue-400' />
@@ -50,9 +50,8 @@ export const Profile: Component = () => {
               {i18n.t('blog')}
             </span>
           </A>
-
           <A
-            href='/projects'
+            href='https://github.com/vikiboss?tab=repositories&q=&type=public&language=&sort=stargazers'
             class='group flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-all'
           >
             <div class='w-6 h-6 i-ph-code text-blue-500 dark:text-blue-400' />
