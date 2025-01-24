@@ -31,7 +31,7 @@ export const Profile: Component = () => {
             <h1 class='text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-4 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider'>
               {personalInfo.name}
             </h1>
-            <span class='inline-block my-2 md:my-4 text-gray-6 dark:text-gray-4 font-medium tracking-wide border-b-2 border-dashed transition-all border-b-amber hover:bg-amber/12 hover:border-b-amber hover:border-solid'>
+            <span class='inline-block my-2 md:my-4 text-gray-6 dark:text-gray-4 font-medium tracking-wide underline-3 border-dashed transition-all underline underline-dashed underline-offset-6 underline-amber hover:bg-amber/12 hover:underline-amber hover:underline-solid'>
               {personalInfo.title}
             </span>
             <p class='text-gray-6 dark:text-gray-4 italic font-light'>"{personalInfo.motto}"</p>
