@@ -48,7 +48,7 @@ export const Profile: Component = () => {
             </span>
           </A>
           <A
-            href='https://github.com/vikiboss?tab=repositories&q=&type=public&language=&sort=stargazers'
+            href='https://github.com/vikiboss?tab=repositories&q=&type=source&language=&sort=stargazers'
             class='group flex items-center gap-3 p-3 px-6 md:px-8 rounded-lg bg-gray-1 hover:bg-gray-200 dark:bg-gray-7/50 dark:hover:bg-gray-7 transition-all'
           >
             <div class='w-6 h-6 i-ri:sparkling-2-line text-blue-500 dark:text-blue-4' />
