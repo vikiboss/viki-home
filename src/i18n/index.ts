@@ -1,5 +1,6 @@
 import { createContext, createSignal } from 'solid-js'
 import { updateMeta } from '../utils/meta'
+
 import type { Language } from '../types'
 
 export const translations = {

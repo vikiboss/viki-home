@@ -1,5 +1,7 @@
 import { Component, useContext } from 'solid-js'
-import { I18nContext, type Language } from '../../i18n'
+import { I18nContext } from '../../i18n'
+
+import type { Language } from '../../types'
 
 export const LangSwitch: Component = () => {
   const { t, lang, setLang } = useContext(I18nContext)!
