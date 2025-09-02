@@ -1,26 +1,10 @@
-import type { translations } from './i18n'
+import type { SocialLink } from './types'
 
-export interface SocialLink {
-  name: string
-  url: string
-  icon: string
-  hoverColor: string
+export const siteConfig = {
+  avatarUrl: 'https://avatar.viki.moe',
 }
 
-export const personalInfo = {
-  name: 'Viki',
-  title: 'Front End <Developer />',
-  motto: 'Less is more.',
-  avatarUrl: '/favicon.ico',
-}
-
-export const socialLinks: {
-  name: keyof (typeof translations)['zh']
-  url: string
-  account: string
-  icon: string
-  hoverColor: string
-}[] = [
+export const socialLinks: SocialLink[] = [
   {
     name: 'github',
     url: 'https://github.com/vikiboss',

@@ -1,6 +1,6 @@
 import { createContext, createSignal } from 'solid-js'
-
-export type Language = 'zh' | 'en'
+import { updateMeta } from '../utils/meta'
+import type { Language } from '../types'
 
 export const translations = {
   zh: {
@@ -23,6 +23,16 @@ export const translations = {
     metaKeywords: '个人网站,作品集,博客,项目展示',
     errorOccurred: '发生错误',
     refresh: '刷新页面',
+
+    // Personal info
+    personalName: 'Viki',
+    personalTitle: '前端开发 <工程师 />',
+    personalMotto: '大道至简。',
+
+    // NotFound page
+    notFoundTitle: '404',
+    notFoundMessage: '页面未找到',
+    backToHome: '返回首页',
 
     x: '推特',
     qq: 'QQ',
@@ -58,6 +68,16 @@ export const translations = {
     errorOccurred: 'An Error Occurred',
     refresh: 'Refresh Page',
 
+    // Personal info
+    personalName: 'Viki',
+    personalTitle: 'Front End <Developer />',
+    personalMotto: 'Less is more.',
+
+    // NotFound page
+    notFoundTitle: '404',
+    notFoundMessage: 'Page Not Found',
+    backToHome: 'Back to Home',
+
     x: 'Twitter',
     qq: 'QQ',
     bili: 'Bilibili',
@@ -92,11 +112,12 @@ export const createI18n = (initialLang: Language = 'zh') => {
   const setLanguage = (newLang: Language) => {
     setLang(newLang)
     localStorage.setItem('language', newLang)
-    document.title = translations[lang()].htmlTitle
-    document.documentElement.setAttribute('lang', newLang)
+    document.title = translations[newLang].htmlTitle
+    updateMeta(newLang)
   }
 
-  document.documentElement.setAttribute('lang', lang())
+  // Initialize meta tags
+  updateMeta(lang())
 
   return { lang, setLang: setLanguage, t }
 }

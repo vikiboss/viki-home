@@ -3,7 +3,7 @@ import { A } from '@solidjs/router'
 
 import { Tooltip } from './tooltip'
 import { I18nContext } from '../i18n'
-import { socialLinks, personalInfo } from '../config'
+import { socialLinks, siteConfig } from '../config'
 
 export const Profile: Component = () => {
   const { t } = useContext(I18nContext)!
@@ -21,37 +21,49 @@ export const Profile: Component = () => {
           <div
             class='flex justify-center mb-6 md:mb-0 md:flex-shrink-0'
             role='img'
-            aria-label={`${personalInfo.name}'s avatar`}
+            aria-label={`${t('personalName')}'s avatar`}
           >
             <div class='size-32 rounded-full overflow-hidden ring-4 ring-white dark:ring-gray-7 shadow-lg transform transition-all duration-600 hover:rotate-360 ease-in-out'>
-              <img src={personalInfo.avatarUrl} alt='个人头像' class='w-full h-full object-cover' />
+              <img 
+                src={siteConfig.avatarUrl} 
+                alt={t('avatarAlt')} 
+                class='w-full h-full object-cover' 
+                loading='eager'
+                fetchpriority='high'
+              />
             </div>
           </div>
           <div class='text-center md:text-left'>
             <h1 class='text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-4 dark:to-indigo-400 bg-clip-text text-transparent tracking-wider'>
-              {personalInfo.name}
+              {t('personalName')}
             </h1>
             <span class='inline-block my-2 md:my-4 text-gray-6 dark:text-gray-4 font-medium tracking-wide underline-3 border-dashed transition-all underline underline-dashed underline-offset-6 underline-amber hover:bg-amber/12 hover:underline-amber hover:underline-solid'>
-              {personalInfo.title}
+              {t('personalTitle')}
             </span>
-            <p class='text-gray-6 dark:text-gray-4 italic font-light'>"{personalInfo.motto}"</p>
+            <p class='text-gray-6 dark:text-gray-4 italic font-light'>"{t('personalMotto')}"</p>
           </div>
         </div>
         <div class='mt-8 md:mt-10 flex justify-center gap-4 max-w-md mx-auto'>
           <A
             href='https://xlog.viki.moe'
-            class='group flex items-center gap-3 p-3 px-6 md:px-8 rounded-lg bg-gray-1 hover:bg-gray-200 dark:bg-gray-7/50 dark:hover:bg-gray-7 transition-all'
+            class='group flex items-center gap-3 p-3 px-6 md:px-8 rounded-lg bg-gray-1 hover:bg-gray-200 dark:bg-gray-7/50 dark:hover:bg-gray-7 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`${t('blog')} - 在新标签页中打开`}
           >
-            <div class='w-6 h-6 i-ri:blogger-line text-blue-500 dark:text-blue-4' />
+            <div class='w-6 h-6 i-ri:blogger-line text-blue-500 dark:text-blue-4' aria-hidden='true' />
             <span class='text-gray-7 group-hover:text-gray-9 dark:text-gray-3 dark:group-hover:text-gray-1'>
               {t('blog')}
             </span>
           </A>
           <A
             href='https://github.com/vikiboss?tab=repositories&q=&type=source&language=&sort=stargazers'
-            class='group flex items-center gap-3 p-3 px-6 md:px-8 rounded-lg bg-gray-1 hover:bg-gray-200 dark:bg-gray-7/50 dark:hover:bg-gray-7 transition-all'
+            class='group flex items-center gap-3 p-3 px-6 md:px-8 rounded-lg bg-gray-1 hover:bg-gray-200 dark:bg-gray-7/50 dark:hover:bg-gray-7 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`${t('projects')} - 在新标签页中打开`}
           >
-            <div class='w-6 h-6 i-ri:sparkling-2-line text-blue-500 dark:text-blue-4' />
+            <div class='w-6 h-6 i-ri:sparkling-2-line text-blue-500 dark:text-blue-4' aria-hidden='true' />
             <span class='text-gray-7 group-hover:text-gray-9 dark:text-gray-3 dark:group-hover:text-gray-1'>
               {t('projects')}
             </span>
@@ -64,11 +76,13 @@ export const Profile: Component = () => {
                 href={link.url || '#'}
                 target={link.url ? '_blank' : ''}
                 rel='noopener noreferrer'
-                class='flex items-center group no-underline'
+                class='flex items-center group no-underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1'
+                aria-label={`${t(link.name)}: ${link.account}${link.url ? ' - 在新标签页中打开' : ''}`}
               >
                 <Tooltip text={`${t(link.name)}: ${link.account}`}>
                   <div
                     class={`w-6 h-6 text-gray-6/80 dark:text-gray-4/80 transform transition-all duration-300 group-hover:scale-90 group-hover:-translate-y--1.2 ${link.icon} ${link.hoverColor}`}
+                    aria-hidden='true'
                   />
                 </Tooltip>
               </a>
